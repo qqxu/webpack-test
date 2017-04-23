@@ -58,7 +58,7 @@ npm install css-loader style-loader --save-dev
 ```
 在`hello.js`文件中的引用位置指定相应loader，表示引用`style.css`文件前，必须使用`css-loader`进行处理:
 `require('css-loader!./style.css)`
-为了使样式生效，需要`style-loader`,把`css-loader`处理后的文件，新建一个style标签插入到html中去:`require('style-loader!css-loader!./style.css)`
+为了使样式生效，需要`style-loader`,把`css-loader`处理后的文件：`require('style-loader!css-loader!./style.css)`相当于新建一个style标签插入到html中去。
 也可以使用命令行完成上述操作
 ```bash
 webpack hello.js hello.bundle.js --module-bind 'css=style-loader!css-loader'
@@ -71,7 +71,8 @@ webpack hello.js hello.bundle.js --module-bind 'css=style-loader!css-loader' --w
 ```
 添加参数`--progress`查看打包进度，查看打包模块可以通过添加`--display-modules`，添加参数`--display-reasons`查看打包该模块的原因
 ```bash
-webpack hello.js hello.bundle.js --module-bind 'css=style-loader!css-loader' --progress --display-modules --display-reasons
+webpack hello.js hello.bundle.js --module-bind 'css=style-loader!css-loader' 
+--progress --display-modules --display-reasons
 ```
 
 
